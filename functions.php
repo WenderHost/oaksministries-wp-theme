@@ -61,8 +61,8 @@ if (function_exists('add_theme_support'))
 /*------------------------------------*\
 	File Directories
 \*------------------------------------*/
- 
- 
+
+
 define("ip", get_template_directory() . '/');
 define("ip_inc", get_template_directory() . '/inc/');
 define("ip_scripts", get_template_directory() . '/lib/scripts/');
@@ -75,7 +75,7 @@ require_once(ip_admin . 'theme-shortcodes.php');
 /*------------------------------------*\
 	Functions
 \*------------------------------------*/
- 
+
 // Remove Version Numbers
  function _remove_script_version( $src ){
     $parts = explode( '?ver', $src );
@@ -90,11 +90,11 @@ function html5blank_nav()
 	wp_nav_menu(
 	array(
 		'theme_location'  => 'header-menu',
-		'menu'            => '', 
-		'container'       => 'div', 
-		'container_class' => 'menu-{menu slug}-container', 
+		'menu'            => '',
+		'container'       => 'div',
+		'container_class' => 'menu-{menu slug}-container',
 		'container_id'    => '',
-		'menu_class'      => 'menu', 
+		'menu_class'      => 'menu',
 		'menu_id'         => '',
 		'echo'            => true,
 		'fallback_cb'     => 'wp_page_menu',
@@ -120,15 +120,15 @@ function html5blank_scripts()
 
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
-        
+
         wp_register_script('bxslider', get_template_directory_uri() . '/js/bxslider.js', array('jquery'), '2.6.2' ); // Modernizr
 		wp_enqueue_script('bxslider'); // Enqueue it!
-		
+
 		wp_register_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '2.6.2' ); // Modernizr
 		wp_enqueue_script('bootstrap-js'); // Enqueue it!
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0' ); // Custom scripts
-        wp_enqueue_script('html5blankscripts'); // Enqueue it!		
+        wp_enqueue_script('html5blankscripts'); // Enqueue it!
     }
 }
 
@@ -144,13 +144,13 @@ function conditional_scripts()
 // Theme Stylesheets using Enqueue
 function html5blank_styles()
 {
-	
+
 	wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1.0', 'all');
     wp_enqueue_style('bootstrap'); // Enqueue it!
-    
+
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
-	
+
 	wp_register_style('stylemain', get_template_directory_uri() . '/style-main.css', array(), '1.0', 'all');
     wp_enqueue_style('stylemain'); // Enqueue it!
 }
@@ -338,7 +338,7 @@ function html5blankcomments($comment, $args, $depth)
 {
 	$GLOBALS['comment'] = $comment;
 	extract($args, EXTR_SKIP);
-	
+
 	if ( 'div' == $args['style'] ) {
 		$tag = 'div';
 		$add_below = 'comment';
@@ -418,7 +418,7 @@ add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove 
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
 add_filter('excerpt_more', 'html5wp_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+//add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
@@ -427,7 +427,7 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
 // Shortcodes
-add_shortcode('toggle_box', 'toggle_box'); 
+add_shortcode('toggle_box', 'toggle_box');
 add_shortcode('clear', 'clear');
 add_shortcode('justify', 'justify');
 add_shortcode('divider', 'divider');
@@ -442,7 +442,7 @@ add_shortcode('divider', 'divider');
  * Hide View Posts from Seminars
  * ========================================================================
  */
- 
+
 
 function posttype_admin_css() {
     global $post_type;
@@ -454,7 +454,7 @@ function posttype_admin_css() {
     echo '<style type="text/css">#post-preview, #message a, .row-actions .view, #view-post-btn, #edit-slug-box{display: none;}</style>';
 }
 add_action( 'admin_head-post-new.php', 'posttype_admin_css' );
-add_action( 'admin_head-post.php', 'posttype_admin_css' ); 
+add_action( 'admin_head-post.php', 'posttype_admin_css' );
 
 
 /**
@@ -462,29 +462,29 @@ add_action( 'admin_head-post.php', 'posttype_admin_css' );
 *
 */
 function hv_remove_view_button_admin_bar() {
- 
+
 global $wp_admin_bar;
- 
+
 if( get_post_type() === 'quotes'){
- 
+
 $wp_admin_bar->remove_menu('view');
- 
+
 }
- 
+
 }
 add_action( 'wp_before_admin_bar_render', 'hv_remove_view_button_admin_bar' );
- 
+
 /**
 * Removes the 'view' button in the posts list page
 *
 * @param $actions
 */
 function hv_remove_view_row_action( $actions ) {
- 
+
 if( get_post_type() === 'quotes' )
 unset( $actions['view'] );
 return $actions;
- 
+
 }
 add_filter( 'page_row_actions', 'hv_remove_view_row_action', 10, 1 );
 
@@ -495,23 +495,23 @@ add_filter( 'page_row_actions', 'hv_remove_view_row_action', 10, 1 );
  * Auto-Populate Form With Seminar Dates
  * ========================================================================
  */
- 
-	
+
+
 // update the '4' to the ID of your form
 
 add_filter('gform_pre_render_4', 'populate_dates');
 
 function populate_dates($form){
-    
+
     foreach($form['fields'] as &$field){
-        
+
         if($field['type'] != 'select' || strpos($field['cssClass'], 'populate-dates') === false)
             continue;
-        
+
         // you can add additional parameters here to alter the posts that are retreieved
         // more info: http://codex.wordpress.org/Template_Tags/get_posts
         $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d"),date("Y")));
-        
+
         $events = get_posts(array(
 				    'post_type' => 'seminars',
 				    'orderby' => 'date',
@@ -524,37 +524,37 @@ function populate_dates($form){
 				          'type' => 'DATE',
 				        )),
 				    'meta_key' => 'date',
-				    ));	 
-        
+				    ));
+
         // update 'Select a Post' to whatever you'd like the instructive option to be
         $choices = array(array('text' => 'Select a Date', 'value' => ' '));
-        
+
         foreach($events as $post){
-        
+
 			$postdate = $post->date;
 			// $postdate = 19881123 (23/11/1988)
-		
+
 			// extract Y,M,D
 			$y = substr($postdate, 0, 4);
 			$m = substr($postdate, 4, 2);
 			$d = substr($postdate, 6, 2);
-		
+
 			// create UNIX
 			$time = strtotime("{$d}-{$m}-{$y}");
-		
+
 			// format date (November 11th 1988)
 			$dropdowndate = date('M d', $time);
-			
+
 			// not sure if you want to change just the displayed date, or the submitted date as well
 			// if you want to change both, change the second $post->date to $dropdowndate
 		    $choices[] = array('text' => $dropdowndate, 'value' => $post->$dropdowndate);
 		}
 
-        
+
         $field['choices'] = $choices;
-        
+
     }
-    
+
     return $form;
 }
 
@@ -564,35 +564,35 @@ function populate_dates($form){
  * Hide ACF from Non-Impact Users
  * ========================================================================
  */
- 
+
 function remove_acf_menu()
 {
- 
+
     // provide a list of usernames who can edit custom field definitions here
-    $admins = array( 
-        'admin', 
+    $admins = array(
+        'admin',
         'impact'
     );
- 
+
     // get the current user
     $current_user = wp_get_current_user();
- 
+
     // match and remove if needed
     if( !in_array( $current_user->user_login, $admins ) )
     {
         remove_menu_page('edit.php?post_type=acf');
     }
- 
+
 }
- 
+
 add_action( 'admin_menu', 'remove_acf_menu' );
 
 /*
 * ========================================================================
 *  Include ACF & Addons
 * ========================================================================
-*/   
- 
+*/
+
 define( 'ACF_LITE' , false );
 include_once(ip_inc . 'acf/acf-repeater/acf-repeater.php');
 include_once(ip_inc . 'acf/acf-options-page/acf-options-page.php');
@@ -603,17 +603,17 @@ include_once(ip_inc . 'acf/Gravity-Forms-ACF-Field-master/acf-gravity_forms.php'
 * ========================================================================
 *  FORM SUBMISSIONS
 * ========================================================================
-*/ 
+*/
 
 add_action("gform_get_form_filter","gform_event_tracking_labels",10,2);
- 
+
 function gform_event_tracking_labels($form_string,$form) {
     $script = '<script>';
     $script .= 'if (window.gf_event_form_labels === undefined){ window.gf_event_form_labels = new Object(); }';
     $script .= 'window.gf_event_form_labels['.$form['id'].'] = "Form: '.strip_tags($form['title']).' ID: '.$form['id'].'";';
     $script .= '</script>';
     return $form_string.$script;
-    
+
 }
 
 ?>

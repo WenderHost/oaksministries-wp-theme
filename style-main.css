@@ -22,19 +22,19 @@ h1, h2 {
 	font-size: 23px;
 	text-transform: uppercase;
 	letter-spacing: .05em;
-	line-height: 1.3em;	
+	line-height: 1.3em;
 }
 
 h3 {
 	font-size: 20px;
-	text-transform: uppercase;	
+	text-transform: uppercase;
 	font-family: 'Oswald', sans-serif;
 	letter-spacing: 0.1em;
 	line-height: 30px;
 }
 
 h4 {
-	font-size: 16px;	
+	font-size: 16px;
 	text-transform: uppercase;
 	font-family: 'Oswald', sans-serif;
 	letter-spacing: 0.05em;
@@ -42,11 +42,11 @@ h4 {
 }
 
 h4 a, h4 a:hover  {
-	color: #DDB940;	
+	color: #DDB940;
 }
 
 h2.no-caps {
-	text-transform: none;	
+	text-transform: none;
 }
 
 /***********************************
@@ -59,6 +59,9 @@ h2.no-caps {
 	position: fixed;
 	top: 0;
 	z-index: 9999;
+}
+.admin-bar #nav-wrap{
+	top: 32px;
 }
 
 #nav {
@@ -92,7 +95,7 @@ h2.no-caps {
 }
 
 #nav li:last-child:after {
-	display: none;	
+	display: none;
 }
 
 #nav a {
@@ -110,7 +113,7 @@ h2.no-caps {
 }
 
 .acorn {
-	position: relative;	
+	position: relative;
 	padding: 0 0 0 25px;
 }
 
@@ -151,13 +154,13 @@ h2.no-caps {
 }
 
 @media only screen and (max-width: 992px) {
-	
+
 .acorn {
 	padding: 0;
 }
 
 .acorn:before {
-	display: none;	
+	display: none;
 }
 
 }
@@ -165,11 +168,11 @@ h2.no-caps {
 @media only screen and (max-width: 767px) {
 
 header {
-	padding: 0;	
+	padding: 0;
 }
 
 #nav-wrap {
-	padding: 0;	
+	padding: 0;
 }
 
 #menu-icon, #menu-icon:hover, #menu-icon.active {
@@ -202,7 +205,7 @@ header {
 }
 
 #nav li:before, #nav li:after {
-	display: none;	
+	display: none;
 }
 
 #nav a, #nav a:hover {
@@ -236,29 +239,29 @@ header {
 }
 
 .logo {
-	width: 450px;	
+	width: 450px;
 }
 
 @media (max-width: 992px) {
 
 .logo {
 	display: block;
-	margin: 0 auto;	
+	margin: 0 auto;
 }
 
 }
 
 @media only screen and (max-width: 767px) {
-	
+
 .featured {
-	padding: 130px 0 61px;	
+	padding: 130px 0 61px;
 }
-	
+
 .logo {
 	width: 100%;
-	max-width: 300px;	
+	max-width: 300px;
 }
-	
+
 }
 
 /****************************
@@ -272,21 +275,21 @@ header {
 }
 
 .verse-wrap {
-	padding: 30px 45px;	
+	padding: 30px 45px;
 	border: 4px solid #BCAC5E;
 }
 
 .word-wrap {
 	padding: 15px 5px;
 	background: #DDB940;
-	color: #fff;	
+	color: #fff;
 	min-height: 62px;
 	margin-bottom: 5px;
 }
 
 .word-wrap h2 {
 	text-align: center;
-	margin: 0;	
+	margin: 0;
 }
 
 .widget_recent_entries ul {
@@ -307,7 +310,7 @@ header {
 
 .post-date {
 	clear: both;
-	display: block;	
+	display: block;
 	font-family: 'Droid Serif', serif;
 	font-size: 12px;
 	margin: 5px 0 0;
@@ -324,7 +327,7 @@ header {
 }
 
 .twitter-link h3 {
-	margin: 0;	
+	margin: 0;
 }
 
 .twitter-link:hover, .twitter-link:hover:focus {
@@ -337,7 +340,7 @@ header {
 **************************/
 
 .footer {
-	padding-bottom: 5px;	
+	padding-bottom: 5px;
 	height: auto;
 	overflow: auto;
 }
@@ -363,22 +366,22 @@ header {
 .quote-author {
 	font-family: 'Oswald', sans-serif;
 	text-transform: uppercase;
-	letter-spacing: .05em;	
+	letter-spacing: .05em;
 }
 
 .links {
-	color: #fff;	
+	color: #fff;
 	padding: 0 5px;
 }
 
 .link {
 	border-top: 5px solid #fff;
 	border-right: 5px solid #fff;
-	padding: 0;	
+	padding: 0;
 }
 
 .link:last-child {
-	border-right: none;	
+	border-right: none;
 }
 
 .link-img {
@@ -407,13 +410,13 @@ transition: all .3s ease;
 }
 
 .link h3 {
-	text-align: center;	
+	text-align: center;
 	margin: 20px 0;
 }
 
 .footer-links {
 	color: #fff;
-	background: #000;	
+	background: #000;
 	display: block;
 	height: auto;
 	overflow: auto;
@@ -421,46 +424,46 @@ transition: all .3s ease;
 
 .footer-links:hover {
 	color: #fff;
-	background: #BCAC5E;	
+	background: #BCAC5E;
 }
 
 .footer-links:hover .link-img {
-	background-size: 110% auto;	
+	background-size: 110% auto;
 }
 
 @media (max-width: 1200px) {
 
 .link-img {
-	background-size: auto 100%;	
+	background-size: auto 100%;
 }
 
 .footer-links:hover .link-img {
-	background-size: auto 110%;	
+	background-size: auto 110%;
 }
-	
+
 }
 
 @media (max-width: 992px) {
-	
+
 .link-img, .footer-links:hover .link-img {
-	background-size: cover;	
+	background-size: cover;
 }
 
 .link {
 	border-right: none;
-	border-left: none;	
+	border-left: none;
 }
-	
+
 }
 
 @media (max-width: 767px) {
 
 .promo {
-	display: none;	
+	display: none;
 }
 
 .link h3 {
-	text-align: center;	
+	text-align: center;
 	margin: 10px 0;
 }
 
@@ -472,15 +475,15 @@ transition: all .3s ease;
 **************************/
 
 .page-wrap {
-	padding: 60px 0;	
+	padding: 60px 0;
 }
 
 .sc-divider {
-	border-top: 1px solid #DDB940;	
+	border-top: 1px solid #DDB940;
 }
 
 .sc-divider.clear {
-	border: none;	
+	border: none;
 }
 
 .page-wrap ul.questions {
@@ -494,7 +497,7 @@ transition: all .3s ease;
 
 .page-wrap ul.questions li {
 	padding: 0 0 0 30px;
-	position: relative;	
+	position: relative;
 }
 
 .icon-question {
@@ -502,12 +505,12 @@ transition: all .3s ease;
 	position: absolute;
 	top: 0;
 	left: 0;
-	font-size: 23px;	
+	font-size: 23px;
 }
 
 .blockquote {
 	position: relative;
-	padding: 0 0 0 65px;	
+	padding: 0 0 0 65px;
 }
 
 .blockquote p {
@@ -519,7 +522,7 @@ transition: all .3s ease;
 	left: 0;
 	top: -11px;
 	font-size: 54px;
-	color: #cacaca;	
+	color: #cacaca;
 }
 
 /****************************
@@ -529,7 +532,7 @@ transition: all .3s ease;
 .headshot {
 	width: 250px;
 	margin: 10px 15px 10px 0;
-	float: left;	
+	float: left;
 }
 
 
@@ -538,11 +541,11 @@ transition: all .3s ease;
 **************************/
 
 .resource-wrap {
-	margin: 30px 0;	
+	margin: 30px 0;
 }
 
 .resource-title {
-	text-transform: uppercase;	
+	text-transform: uppercase;
 }
 
 .book-img {
@@ -550,7 +553,7 @@ transition: all .3s ease;
 	float: left;
 	margin: 10px 25px 15px 0;
 	width: 40%;
-	max-width: 200px;	
+	max-width: 200px;
 	box-shadow: 0px 3px 3px rgba(0, 0, 0, .4);
 }
 
@@ -585,7 +588,7 @@ transition: all .3s ease;
 -webkit-transform: rotate(90deg);
 -o-transform: rotate(90deg);
 -ms-transform: rotate(90deg);
-transform: rotate(90deg);	
+transform: rotate(90deg);
 }
 
 /****************************
@@ -593,33 +596,33 @@ transform: rotate(90deg);
 **************************/
 
 .form-allowed-tags {
-	display: none;	
+	display: none;
 }
 
 .comments ul, .comment p, .comment ol {
 	padding: 0;
-	list-style-type: none;	
+	list-style-type: none;
 	font-size: 12px;
 }
 
 .commentmetadata {
-	margin: 15px 0;	
+	margin: 15px 0;
 }
 
 .fn {
 	font-size: 16px;
-	text-transform: uppercase;	
+	text-transform: uppercase;
 	font-family: 'Oswald', sans-serif;
 	margin-left: 15px;
 }
 
 .says {
-	display: none;	
+	display: none;
 }
 
 .avatar {
 	width: 50px;
-	height: 50px;	
+	height: 50px;
 }
 
 .comment-respond p {
@@ -627,7 +630,7 @@ transform: rotate(90deg);
 }
 
 .comments ul.children {
-	padding: 0 0 0 50px;	
+	padding: 0 0 0 50px;
 }
 
 .date {
@@ -637,24 +640,24 @@ transform: rotate(90deg);
 	display: block;
 	border-bottom: 1px solid #DDB940;
 	margin: 0 0 30px;
-}	
+}
 
 .comments {
-	border-top: 1px solid #DDB940;	
+	border-top: 1px solid #DDB940;
 	margin: 30px 0 0;
 	padding: 10px 0 0;
 }
 
 a h2, a h2:hover, h2 a, h2 a:hover {
-	color: #333;	
+	color: #333;
 }
 
 .pagination {
-	font-size: 16px;	
+	font-size: 16px;
 }
 
 .pagination a, .page-numbers.current {
-	margin: 0 10px 0 0;	
+	margin: 0 10px 0 0;
 }
 
 /****************************
@@ -662,7 +665,7 @@ a h2, a h2:hover, h2 a, h2 a:hover {
 **************************/
 
 .modal {
-	z-index: 9999999;	
+	z-index: 9999999;
 }
 
 .modal-dialog {
@@ -670,7 +673,7 @@ a h2, a h2:hover, h2 a, h2 a:hover {
 }
 
 .modal .page-wrap {
-	padding: 30px;	
+	padding: 30px;
 }
 
 .close {
@@ -686,11 +689,11 @@ a h2, a h2:hover, h2 a, h2 a:hover {
 	margin: 30px auto 0;
 	display: block;
 	width: 100%;
-	max-width: 400px;	
+	max-width: 400px;
 }
 
 .ninja-forms-required-items {
-	display: none;	
+	display: none;
 }
 
 body .ninja-forms-req-symbol {
@@ -698,7 +701,7 @@ body .ninja-forms-req-symbol {
 }
 
 .nf_submit_1 {
-	text-align: center;	
+	text-align: center;
 }
 
 #ninja_forms_field_5 {
@@ -730,13 +733,13 @@ body .ninja-forms-req-symbol {
 }
 
 ul.bxslider {
-	font-family: 'Oswald', sans-serif;	
+	font-family: 'Oswald', sans-serif;
 	padding: 0;
 }
 
 .bx-controls-direction {
 	display: block;
-	margin: 0 0 30px;	
+	margin: 0 0 30px;
 }
 
 .bx-controls-direction a, .bx-controls-direction a:hover, .bx-controls-direction a:focus {
