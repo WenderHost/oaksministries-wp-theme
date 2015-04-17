@@ -75,15 +75,6 @@ require_once(ip_admin . 'theme-shortcodes.php');
 /*------------------------------------*\
 	Functions
 \*------------------------------------*/
-
-// Remove Version Numbers
- function _remove_script_version( $src ){
-    $parts = explode( '?ver', $src );
-        return $parts[0];
-}
-add_filter( 'script_loader_src', '_remove_script_version', 15, 1 );
-add_filter( 'style_loader_src', '_remove_script_version', 15, 1 );
-
 // HTML5 Blank navigation
 function html5blank_nav()
 {
@@ -145,13 +136,13 @@ function conditional_scripts()
 function html5blank_styles()
 {
 
-	wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1.0', 'all');
+	wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', null, '1.0', 'all');
     wp_enqueue_style('bootstrap'); // Enqueue it!
-
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+//echo '<pre>filemtime('.filemtime( get_template_directory() . '/style.css' ).')</pre>';
+    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', null, filemtime( get_template_directory() . '/style.css' ), 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
 
-	wp_register_style('stylemain', get_template_directory_uri() . '/style-main.css', array(), '1.0', 'all');
+	wp_register_style('stylemain', get_template_directory_uri() . '/style-main.css', null, filemtime( get_template_directory() . '/style-main.css' ), 'all');
     wp_enqueue_style('stylemain'); // Enqueue it!
 }
 
