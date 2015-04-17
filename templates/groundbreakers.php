@@ -1,4 +1,8 @@
-<?php /* Template Name: Groundbreakers */ get_header(); ?>
+<?php
+/*
+Template Name: Groundbreakers
+*/
+get_header(); ?>
 
 <style>
 
