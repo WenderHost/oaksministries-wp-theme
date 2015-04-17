@@ -1,0 +1,258 @@
+/***********************************
+	SIMPLE RESPONSIVE MENU
+***********************************/
+
+@media only screen and (max-width: 767px) {
+
+#menu-icon, #menu-icon:hover, #menu-icon.active {
+	background: #000;
+	padding: 7px 0 0;
+	font-size: 1.8em;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	border: none;
+}
+
+#nav {
+	background: #fff;
+	padding: 0;
+	border: none;
+	top: 39px;
+}
+
+#nav li {
+	padding: 8px 0;
+}
+
+#nav a {
+	text-align: center;
+	color: #000;
+	font-size: 1.8em;
+}
+
+}
+
+
+/***********************************
+	GRAVITY FORMS - 2x2 (does not work if field label is shown)
+***********************************/
+
+body #gform_wrapper_1 {
+	height: auto;
+	overflow: auto;
+}
+
+body .gform_wrapper ul li.gfield {
+	clear: none;
+}
+
+body #gform_wrapper_1 .gform_body .gform_fields .gfield .gfield_label {
+	display: none;
+}
+
+body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=text] {
+	display: inline;
+	float: left;
+	width: 48.5%;
+	margin: 0 3% 15px 0;
+}
+
+body .gform_wrapper .gform_body .gform_fields #field_1_2.gfield input[type=text] {
+	margin: 0 0 15px;
+}
+
+body #gform_wrapper_1 .gform_footer {
+	padding: 0;
+	margin: 0;
+	width: 48.5%;
+	clear: none;
+	display: inline;
+	float: left;
+}
+
+body #gform_wrapper_1 .gform_footer input[type=submit] {
+	width: 100%;
+	border: none;
+	border-radius: 0px;
+	background: #000;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 8px 0;
+}
+
+@media only screen and (max-width: 767px) {
+
+body #gform_wrapper_1 .gform_body .gform_fields .gfield input[type=text], body #gform_wrapper_1 .gform_footer {
+	width: 100%;
+	margin: 0 0 15px;
+}
+
+}
+
+/***********************************
+	GRAVITY FORMS - 1x4 (with field label)
+***********************************/
+
+body #gform_wrapper_1 {
+	height: auto;
+	overflow: auto;
+}
+
+body .gform_wrapper ul li.gfield {
+	clear: none;
+}
+
+body #gform_wrapper_1 .gform_body .gform_fields .gfield {
+	width: 22.75%;
+	display: inline;
+	float: left;
+	margin: 0 3% 0 0;
+}
+
+body #gform_wrapper_1 .gform_footer {
+	margin: 11px 0 0;
+	width: 22.75%;
+	clear: none;
+	display: inline;
+	float: left;
+}
+
+body #gform_wrapper_1 .gform_footer input[type=submit] {
+	width: 100%;
+	border: none;
+	border-radius: 0px;
+	background: #000;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 9px 0;
+}
+
+@media only screen and (max-width: 767px) {
+
+body #gform_wrapper_1 .gform_body .gform_fields .gfield, body #gform_wrapper_1 .gform_footer {
+	width: 100%;
+	margin: 0 0 15px;
+}
+
+body #gform_wrapper_1 .gform_footer {
+	padding: 0;
+}
+
+}
+
+/***********************************
+	GRAVITY FORMS - 1x4 (no field label)
+***********************************/
+
+body #gform_wrapper_1 {
+	height: auto;
+	overflow: auto;
+}
+
+body .gform_wrapper ul li.gfield {
+	clear: none;
+}
+
+body #gform_wrapper_1 .gform_body .gform_fields .gfield .gfield_label {
+	display: none;
+}
+
+body #gform_wrapper_1 .gform_body .gform_fields .gfield {
+	width: 22.75%;
+	display: inline;
+	float: left;
+	margin: 0 3% 0 0;
+}
+
+body #gform_wrapper_1 .gform_footer {
+	margin: 0 0 0;
+	padding: 0;
+	width: 22.75%;
+	clear: none;
+	display: inline;
+	float: left;
+}
+
+body #gform_wrapper_1 .gform_footer input[type=submit] {
+	width: 100%;
+	border: none;
+	border-radius: 0px;
+	background: #000;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 9px 0;
+}
+
+@media only screen and (max-width: 767px) {
+
+body #gform_wrapper_1 .gform_body .gform_fields .gfield, body #gform_wrapper_1 .gform_footer {
+	width: 100%;
+	margin: 0 0 15px;
+}
+
+body #gform_wrapper_1 .gform_footer {
+	padding: 0;
+}
+
+}
+
+
+/***********************************
+	GRAVITY FORMS - Contact Form 3 in a row paragraph full width below - (does not work if field label is shown)
+***********************************
+
+body #gform_wrapper_2 {
+	height: auto;
+	overflow: auto;
+}
+
+body .gform_wrapper ul li.gfield {
+	clear: none;
+}
+
+body #gform_wrapper_2 .gform_body .gform_fields .gfield .gfield_label {
+	display: none;
+}
+
+body #gform_wrapper_2 .gform_body .gform_fields .gfield input[type=text] {
+	display: inline;
+	float: left;
+	width: 31%;
+	margin: 0 3.5% 15px 0;
+}
+
+body .gform_wrapper .gform_body .gform_fields #field_2_3.gfield input[type=text] {
+	margin: 0 0 15px 0;
+}
+
+body #gform_wrapper_1 .gform_body .gform_fields .gfield textarea {
+	padding: 5px;
+	margin: 0 0 15px;
+}
+
+body #gform_wrapper_2 .gform_footer {
+	padding; 0;
+	margin: 0;
+}
+
+body #gform_wrapper_2 .gform_footer input[type=submit] {
+	border: none;
+	border-radius: 0px;
+	background: #000;
+	color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+
+body #gform_wrapper_2 .gform_body .gform_fields .gfield input[type=text] {
+	width: 100%;
+	margin: 0 0 15px;
+}
+
+body #gform_wrapper_2 .gform_footer input[type=submit] {
+	width: 100%;
+}
+
+}
+

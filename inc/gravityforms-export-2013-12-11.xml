@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms version="1.7.12">
+	<form labelPlacement="top_label" useCurrentUserAsAuthor="1">
+		<title><![CDATA[Free Book]]></title>
+		<descriptionPlacement><![CDATA[below]]></descriptionPlacement>
+		<button type="text">
+			<text><![CDATA[Submit]]></text>
+		</button>
+		<fields>
+			<field id="1" type="text" isRequired="1" size="medium">
+				<label><![CDATA[Name]]></label>
+				<adminLabel><![CDATA[Name]]></adminLabel>
+				<defaultValue><![CDATA[Name]]></defaultValue>
+				<cssClass><![CDATA[clearit]]></cssClass>
+			</field>
+			<field id="2" type="email" isRequired="1" size="medium">
+				<label><![CDATA[Email]]></label>
+				<adminLabel><![CDATA[Email]]></adminLabel>
+				<defaultValue><![CDATA[Email]]></defaultValue>
+				<cssClass><![CDATA[clearit]]></cssClass>
+			</field>
+			<field id="3" type="phone" isRequired="1" size="medium" phoneFormat="standard">
+				<label><![CDATA[Phone]]></label>
+				<adminLabel><![CDATA[Phone]]></adminLabel>
+				<defaultValue><![CDATA[Phone]]></defaultValue>
+				<cssClass><![CDATA[clearit]]></cssClass>
+			</field>
+		</fields>
+		<notifications>
+			<notification id="52a874b0143d1">
+				<to><![CDATA[{admin_email}]]></to>
+				<name><![CDATA[Admin Notification]]></name>
+				<event><![CDATA[form_submission]]></event>
+				<toType><![CDATA[email]]></toType>
+				<subject><![CDATA[New submission from {form_title}]]></subject>
+				<message><![CDATA[{all_fields}
+
+{embed_url}]]></message>
+				<from><![CDATA[{Email:2}]]></from>
+			</notification>
+		</notifications>
+		<confirmations>
+			<confirmation id="52a874b014608" isDefault="1" type="message">
+				<name><![CDATA[Default Confirmation]]></name>
+				<message><![CDATA[Thanks for contacting us! We will get in touch with you shortly.]]></message>
+			</confirmation>
+		</confirmations>
+	</form>
+	<form labelPlacement="top_label" useCurrentUserAsAuthor="1">
+		<title><![CDATA[Contact Us]]></title>
+		<descriptionPlacement><![CDATA[below]]></descriptionPlacement>
+		<button type="text">
+			<text><![CDATA[Submit]]></text>
+		</button>
+		<fields>
+			<field id="1" type="text" isRequired="1" size="medium">
+				<label><![CDATA[Name]]></label>
+				<adminLabel><![CDATA[Name]]></adminLabel>
+				<defaultValue><![CDATA[Name]]></defaultValue>
+				<cssClass><![CDATA[clearit]]></cssClass>
+			</field>
+			<field id="2" type="email" isRequired="1" size="medium">
+				<label><![CDATA[Email]]></label>
+				<adminLabel><![CDATA[Email]]></adminLabel>
+				<defaultValue><![CDATA[Email]]></defaultValue>
+				<cssClass><![CDATA[clearit]]></cssClass>
+			</field>
+			<field id="3" type="phone" isRequired="1" size="medium" phoneFormat="standard">
+				<label><![CDATA[Phone]]></label>
+				<adminLabel><![CDATA[Phone]]></adminLabel>
+				<defaultValue><![CDATA[Phone]]></defaultValue>
+				<cssClass><![CDATA[clearit]]></cssClass>
+			</field>
+			<field id="4" type="textarea" size="medium">
+				<label><![CDATA[Comments]]></label>
+				<adminLabel><![CDATA[Comments]]></adminLabel>
+				<defaultValue><![CDATA[Comments]]></defaultValue>
+				<cssClass><![CDATA[clearit]]></cssClass>
+			</field>
+		</fields>
+		<confirmations>
+			<confirmation id="52a874f62e66a" isDefault="1" type="message">
+				<name><![CDATA[Default Confirmation]]></name>
+				<message><![CDATA[Thanks for contacting us! We will get in touch with you shortly.]]></message>
+			</confirmation>
+		</confirmations>
+		<notifications>
+			<notification id="52a874f62e41c">
+				<to><![CDATA[{admin_email}]]></to>
+				<name><![CDATA[Admin Notification]]></name>
+				<event><![CDATA[form_submission]]></event>
+				<toType><![CDATA[email]]></toType>
+				<subject><![CDATA[New submission from {form_title}]]></subject>
+				<message><![CDATA[{all_fields}
+
+{embed_url}]]></message>
+				<from><![CDATA[{Email:2}]]></from>
+			</notification>
+		</notifications>
+	</form>
+</forms>

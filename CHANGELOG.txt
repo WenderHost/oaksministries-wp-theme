@@ -1,0 +1,6 @@
+Changelog 1.0 - June 19, 2014
+
+- Release
+- Include Bootstrap Framework
+- Include Bootstrap Modal
+- Include Bootstrap v3 & Gravity Forms Styles
