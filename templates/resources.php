@@ -1,17 +1,21 @@
-<?php /* Template Name: Resources */ get_header(); ?>
+<?php
+/*
+Template Name: Resources
+*/
+get_header(); ?>
 
 <style>
 
 .footer-links:hover {
-	background: <?php $values = get_field('featured_color'); if($values) { ?><?php the_field( "featured_color" ); ?><?php } else { ?>#BCACphp5E<? } ?>;
+	background: <?php $values = get_field('featured_color'); if($values) { ?><?php the_field( "featured_color" ); ?><?php } else { ?>#BCACphp5E<?php } ?>;
 }
 
 #nav li.current-menu-item a {
-	border-bottom: 20px solid <?php $values = get_field('featured_color'); if($values) { ?><?php the_field( "featured_color" ); ?><?php } else { ?>#BCACphp5E<? } ?>;
+	border-bottom: 20px solid <?php $values = get_field('featured_color'); if($values) { ?><?php the_field( "featured_color" ); ?><?php } else { ?>#BCACphp5E<?php } ?>;
 }
 
 .verse-wrap {
-	border: 4px solid <?php $values = get_field('featured_color'); if($values) { ?><?php the_field( "featured_color" ); ?><?php } else { ?>#BCACphp5E<? } ?>
+	border: 4px solid <?php $values = get_field('featured_color'); if($values) { ?><?php the_field( "featured_color" ); ?><?php } else { ?>#BCACphp5E<?php } ?>
 }
 
 </style>
@@ -25,11 +29,13 @@
         <!-- Section -->
         <section class="page-wrap">
 
-        	<?php $values = get_field('page_title'); if($values) { ?>
+        	<?php
+            $values = get_field('page_title');
+            if( $values ){ ?>
                 <h1><?php the_field( "page_title" ); ?></h1>
-            <? }php else { ?>
+            <?php } else { ?>
                 <h1><?php the_title(); ?></h1>
-            <? }php ?>
+            <?php } ?>
 
             <?php echo do_shortcode('[divider]'); ?>
 
@@ -111,7 +117,7 @@
 
                                <p><?php the_sub_field('description'); ?></p>
 
-                               <p><a href="<?php the_sub_field( "link" ); ?>" target="_blank">Read More >></a></p>
+                               <p><a href="<?php the_sub_field( "link" ); ?>" target="_blank">Read More &raquo;</a></p>
 
                             </div>
                             <!-- resource-wrap -->
