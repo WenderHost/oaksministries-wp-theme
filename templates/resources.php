@@ -52,167 +52,32 @@ get_header(); ?>
 
                 	<?php the_content(); ?>
 
-                	<!-- BOOKS -->
-					<?php if( have_rows('books') ): ?>
-
-                    <!-- toggle -->
-                    <div class="toggle">
-
-                        <h2>Other Great Books</h2>
-
-                    </div>
-                    <!-- toggle -->
-
-                    <!-- toggle-box -->
-                    <div class="toggle-box">
-
-                    	<?php echo do_shortcode('[divider]'); ?>
-
-						<?php while ( have_rows('books') ) : the_row(); ?>
-
-                            <!-- resource-wrap -->
-                            <div class="resource-wrap">
-
-                               <h4><strong><?php the_sub_field('title'); ?></strong>
-
-                               <?php if( get_sub_field( "author" ) ): ?> / <?php the_sub_field( "author" ); ?><?php endif; ?></h4>
-
-                               <p><?php the_sub_field('description'); ?></p>
-
-                            </div>
-                            <!-- resource-wrap -->
-
-                        <?php endwhile; else : ?>
-
-                        <?php endif;?>
-                    	<!-- BOOKS -->
-
-                    </div>
-                    <!-- toggle-box -->
-
-                    <!-- LINKS -->
-					<?php if( have_rows('books') ): ?>
-
-                    <!-- toggle -->
-                    <div class="toggle">
-
-                        <h2>Links I recommend</h2>
-
-                    </div>
-                    <!-- toggle -->
-
-                    <!-- toggle-box -->
-                    <div class="toggle-box">
-
-                    	<?php echo do_shortcode('[divider]'); ?>
-
-						<?php while ( have_rows('links') ) : the_row(); ?>
-
-                            <!-- resource-wrap -->
-                            <div class="resource-wrap">
-
-                               <h4><strong><?php the_sub_field('title'); ?></strong>
-
-                               <?php if( get_sub_field( "author" ) ): ?> / <?php the_sub_field( "author" ); ?><?php endif; ?></h4>
-
-                               <p><?php the_sub_field('description'); ?></p>
-
-                               <p><a href="<?php the_sub_field( "link" ); ?>" target="_blank">Read More &raquo;</a></p>
-
-                            </div>
-                            <!-- resource-wrap -->
-
-                        <?php endwhile; else : ?>
-
-                        <?php endif;?>
-                        <!-- Links -->
-
-                  	</div>
-                    <!-- toggle-box -->
-
-                    <!-- VIDEOS -->
-					<?php if( have_rows('videos') ): ?>
-
-                    <!-- toggle -->
-                    <div class="toggle">
-
-                        <h2>Videos</h2>
-
-                    </div>
-                    <!-- toggle -->
-
-                    <!-- toggle-box -->
-                    <div class="toggle-box">
-
-                    	<?php echo do_shortcode('[divider]'); ?>
-
-						<?php while ( have_rows('videos') ) : the_row(); ?>
-
-                            <!-- resource-wrap -->
-                            <div class="resource-wrap">
-
-                               <h4><strong><?php the_sub_field('title'); ?></strong>
-
-                               <?php if( get_sub_field( "author" ) ): ?> / <?php the_sub_field( "author" ); ?><?php endif; ?></h4>
-
-                               <p><?php the_sub_field('description'); ?></p>
-
-                               <p><a href="<?php the_sub_field( "link" ); ?>" target="_blank">View Video >></a></p>
-
-                            </div>
-                            <!-- resource-wrap -->
-
-                        <?php endwhile; else : ?>
-
-                        <?php endif;?>
-                        <!-- VIDEOS -->
-
-                    </div>
-                    <!-- toggle-box -->
-
-                    <!-- BIBLE STUDIES -->
-					<?php if( have_rows('bible_studies') ): ?>
-
-                    <!-- toggle -->
-                    <div class="toggle">
-
-                        <h2>Bible Studies</h2>
-
-                    </div>
-                    <!-- toggle -->
-
-                    <!-- toggle-box -->
-                    <div class="toggle-box">
-
-                    	<?php echo do_shortcode('[divider]'); ?>
-
-						<?php while ( have_rows('bible_studies') ) : the_row(); ?>
-
-                            <!-- resource-wrap -->
-                            <div class="resource-wrap">
-
-                               <h4><strong><?php the_sub_field('title'); ?></strong>
-
-                               <?php if( get_sub_field( "author" ) ): ?> / <?php the_sub_field( "author" ); ?><?php endif; ?></h4>
-
-                               <p><?php the_sub_field('description'); ?></p>
-
-                               <?php if( get_sub_field( "link" ) ): ?>
-
-                               <p><a href="<?php the_sub_field( "link" ); ?>" target="_blank">Read More >></a></p>
-
-                               <?php endif; ?>
-
-                            </div>
-                            <!-- resource-wrap -->
-
-                        <?php endwhile; else : ?>
-
-                        <?php endif;?>
-                        <!-- BIBLE STUDIES -->
-
-                    </div>
-                    <!-- toggle-box -->
+                    <?php
+                    // ACF Sections
+                    $acf_sections = array(
+                        'Other Great Books' => array( 'name' => 'books', 'link_text' => 'Read More' ),
+                        'Blogs' => array( 'name' => 'blogs', 'link_text' => 'Visit Blog' ),
+                        'Websites' => array( 'name' => 'websites', 'link_text' => 'Visit Site' ),
+                        'Videos' => array( 'name' => 'videos', 'link_text' => 'View Video' ),
+                        'Bible Studies' => array( 'name' => 'bible_studies', 'link_text' => 'Read More' ),
+                    );
+                    $divider = do_shortcode( '[divider]' );
+
+                    foreach( $acf_sections as $title => $section ){
+                        if( have_rows( $section['name'] ) ){
+                            $format = '<div class="toggle"><h2>%1$s</h2></div><div class="toggle-box">%2$s%3$s</div>';
+
+                            $rows = array();
+                            while( have_rows( $section['name'] ) ) : the_row();
+                                $author = ( get_sub_field( 'author' ) )? ' / ' . get_sub_field( 'author' ) : '';
+                                $link = ( ! empty( get_sub_field( 'link' ) ) )? '<p><a href="' . get_sub_field( 'link' ) . '" target="_blank">' . $section['link_text'] . ' &rarr;</a></p>' : '';
+                                $rows[] = '<div class="resource-wrap"><h4><strong>' . get_sub_field( 'title' ) . '</strong>' . $author . '</h4><p>' . get_sub_field( 'description' ) . '</p>' . $link . '</div>';
+                            endwhile;
+
+                            echo sprintf( $format, $title, $divider, implode( "\n", $rows ) );
+                        }
+                    }
+                    ?>
 
 				</article>
 				<!-- /Article -->
