@@ -418,10 +418,14 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
 // Shortcodes
+/*
+ * The following are handled by /inc/shortcodes/theme-shortcodes.php
+ * and should eventually be removed:
 add_shortcode('toggle_box', 'toggle_box');
 add_shortcode('clear', 'clear');
 add_shortcode('justify', 'justify');
 add_shortcode('divider', 'divider');
+*/
 
 // Shortcodes above would be nested like this -
 // [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
