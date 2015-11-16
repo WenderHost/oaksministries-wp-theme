@@ -18,6 +18,7 @@ a {
 	text-decoration: none;
 }
 a:hover{
+	color: #9d32a2;
 	text-decoration: underline;
 }
 
