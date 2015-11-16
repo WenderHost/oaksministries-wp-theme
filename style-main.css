@@ -13,9 +13,12 @@ p, .page-wrap ul, .page-wrap ol {
 	line-height: 24px;
 }
 
-a, a:hover {
-	color: #5c6900; /* #DDB940*/
+a {
+	color: #9d32a2; /* #DDB940*/
 	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
 }
 
 h1, h2 {
