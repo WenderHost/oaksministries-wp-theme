@@ -15,14 +15,12 @@
 	Theme Support
 \*------------------------------------*/
 
-if (!isset($content_width))
-{
+if (!isset($content_width)) {
     $content_width = 900;
 }
 
-if (function_exists('add_theme_support'))
-{
-    // Add Menu Support
+if (function_exists('add_theme_support')) {
+// Add Menu Support
     add_theme_support('menus');
 
     // Add Thumbnail Theme Support
@@ -78,26 +76,26 @@ require_once(ip_admin . 'theme-shortcodes.php');
 // HTML5 Blank navigation
 function html5blank_nav()
 {
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul id="nav">%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
+    wp_nav_menu(
+        array(
+        'theme_location'  => 'header-menu',
+        'menu'            => '',
+        'container'       => 'div',
+        'container_class' => 'menu-{menu slug}-container',
+        'container_id'    => '',
+        'menu_class'      => 'menu',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul id="nav">%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => ''
+        )
+    );
 }
 
 
@@ -105,20 +103,19 @@ function html5blank_nav()
 function html5blank_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-
-    	wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
+        wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
         wp_enqueue_script('conditionizr'); // Enqueue it!
 
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
 
-        wp_register_script('bxslider', get_template_directory_uri() . '/js/bxslider.js', array('jquery'), '2.6.2' ); // Modernizr
-		wp_enqueue_script('bxslider'); // Enqueue it!
+        wp_register_script('bxslider', get_template_directory_uri() . '/js/bxslider.js', array('jquery'), '2.6.2'); // Modernizr
+        wp_enqueue_script('bxslider'); // Enqueue it!
 
-		wp_register_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '2.6.2' ); // Modernizr
-		wp_enqueue_script('bootstrap-js'); // Enqueue it!
+        wp_register_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '2.6.2'); // Modernizr
+        wp_enqueue_script('bootstrap-js'); // Enqueue it!
 
-        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0' ); // Custom scripts
+        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
     }
 }
@@ -135,15 +132,7 @@ function conditional_scripts()
 // Theme Stylesheets using Enqueue
 function html5blank_styles()
 {
-
-	wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', null, '1.0', 'all');
-    wp_enqueue_style('bootstrap'); // Enqueue it!
-//echo '<pre>filemtime('.filemtime( get_template_directory() . '/style.css' ).')</pre>';
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', null, filemtime( get_template_directory() . '/style.css' ), 'all');
-    wp_enqueue_style('html5blank'); // Enqueue it!
-
-	wp_register_style('stylemain', get_template_directory_uri() . '/style-main.css', null, filemtime( get_template_directory() . '/style-main.css' ), 'all');
-    wp_enqueue_style('stylemain'); // Enqueue it!
+    wp_enqueue_style('main', get_template_directory_uri() . '/css/main.css', null, filemtime(get_template_directory() . '/css/main.css'));
 }
 
 // Loading Conditional Styles
@@ -203,9 +192,8 @@ function add_slug_to_body_class($classes)
 }
 
 // If Dynamic Sidebar Exists
-if (function_exists('register_sidebar'))
-{
-    // Define Sidebar Widget Area 1
+if (function_exists('register_sidebar')) {
+// Define Sidebar Widget Area 1
     register_sidebar(array(
         'name' => __('Widget Area 1', 'html5blank'),
         'description' => __('Description for this widget-area...', 'html5blank'),
@@ -300,14 +288,14 @@ function html5_style_remove($tag)
 }
 
 // Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail
-function remove_thumbnail_dimensions( $html )
+function remove_thumbnail_dimensions($html)
 {
     $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
     return $html;
 }
 
 // Custom Gravatar in Settings > Discussion
-function html5blankgravatar ($avatar_defaults)
+function html5blankgravatar($avatar_defaults)
 {
     $myavatar = get_template_directory_uri() . '/img/gravatar.jpg';
     $avatar_defaults[$myavatar] = "Custom Gravatar";
@@ -318,7 +306,7 @@ function html5blankgravatar ($avatar_defaults)
 function enable_threaded_comments()
 {
     if (!is_admin()) {
-        if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+        if (is_singular() and comments_open() and (get_option('thread_comments') == 1)) {
             wp_enqueue_script('comment-reply');
         }
     }
@@ -327,45 +315,47 @@ function enable_threaded_comments()
 // Custom Comments Callback
 function html5blankcomments($comment, $args, $depth)
 {
-	$GLOBALS['comment'] = $comment;
-	extract($args, EXTR_SKIP);
+    $GLOBALS['comment'] = $comment;
+    extract($args, EXTR_SKIP);
 
-	if ( 'div' == $args['style'] ) {
-		$tag = 'div';
-		$add_below = 'comment';
-	} else {
-		$tag = 'li';
-		$add_below = 'div-comment';
-	}
+    if ('div' == $args['style']) {
+        $tag = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag = 'li';
+        $add_below = 'div-comment';
+    }
 ?>
-	<<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-	<?php endif; ?>
-	<div class="comment-author vcard">
-	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-	<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
-	</div>
+    <<?php echo $tag ?> <?php comment_class(empty($args['has_children']) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
+    <?php if ('div' != $args['style']) : ?>
+    <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+    <?php endif; ?>
+    <div class="comment-author vcard">
+    <?php if ($args['avatar_size'] != 0) {
+        echo get_avatar($comment, $args['180']);
+} ?>
+    <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+    </div>
 <?php if ($comment->comment_approved == '0') : ?>
-	<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-	<br />
+    <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
+    <br />
 <?php endif; ?>
 
-	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		<?php
-			/* translators: 1: date, 2: time */
-			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-		?>
-	</div>
+    <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID)) ?>">
+        <?php
+            /* translators: 1: date, 2: time */
+            printf(__('%1$s at %2$s'), get_comment_date(), get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'), '  ', '');
+        ?>
+    </div>
 
-	<?php comment_text() ?>
+    <?php comment_text() ?>
 
-	<div class="reply">
-	<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-	</div>
-	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
-	<?php endif; ?>
+    <div class="reply">
+    <?php comment_reply_link(array_merge($args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+    </div>
+    <?php if ('div' != $args['style']) : ?>
+    </div>
+    <?php endif; ?>
 <?php }
 
 /*------------------------------------*\
@@ -439,49 +429,50 @@ add_shortcode('divider', 'divider');
  */
 
 
-function posttype_admin_css() {
+function posttype_admin_css()
+{
     global $post_type;
     $post_types = array(
                         /* set post types */
                         'quotes',
                   );
-    if(in_array($post_type, $post_types))
-    echo '<style type="text/css">#post-preview, #message a, .row-actions .view, #view-post-btn, #edit-slug-box{display: none;}</style>';
+    if (in_array($post_type, $post_types)) {
+        echo '<style type="text/css">#post-preview, #message a, .row-actions .view, #view-post-btn, #edit-slug-box{display: none;}</style>';
+    }
 }
-add_action( 'admin_head-post-new.php', 'posttype_admin_css' );
-add_action( 'admin_head-post.php', 'posttype_admin_css' );
+add_action('admin_head-post-new.php', 'posttype_admin_css');
+add_action('admin_head-post.php', 'posttype_admin_css');
 
 
 /**
 * Removes the 'view' link in the admin bar
 *
 */
-function hv_remove_view_button_admin_bar() {
+function hv_remove_view_button_admin_bar()
+{
 
-global $wp_admin_bar;
+    global $wp_admin_bar;
 
-if( get_post_type() === 'quotes'){
-
-$wp_admin_bar->remove_menu('view');
-
+    if (get_post_type() === 'quotes') {
+        $wp_admin_bar->remove_menu('view');
+    }
 }
-
-}
-add_action( 'wp_before_admin_bar_render', 'hv_remove_view_button_admin_bar' );
+add_action('wp_before_admin_bar_render', 'hv_remove_view_button_admin_bar');
 
 /**
 * Removes the 'view' button in the posts list page
 *
 * @param $actions
 */
-function hv_remove_view_row_action( $actions ) {
+function hv_remove_view_row_action($actions)
+{
 
-if( get_post_type() === 'quotes' )
-unset( $actions['view'] );
-return $actions;
-
+    if (get_post_type() === 'quotes') {
+        unset($actions['view']);
+    }
+    return $actions;
 }
-add_filter( 'page_row_actions', 'hv_remove_view_row_action', 10, 1 );
+add_filter('page_row_actions', 'hv_remove_view_row_action', 10, 1);
 
 
 
@@ -496,58 +487,57 @@ add_filter( 'page_row_actions', 'hv_remove_view_row_action', 10, 1 );
 
 add_filter('gform_pre_render_4', 'populate_dates');
 
-function populate_dates($form){
+function populate_dates($form)
+{
 
-    foreach($form['fields'] as &$field){
-
-        if($field['type'] != 'select' || strpos($field['cssClass'], 'populate-dates') === false)
+    foreach ($form['fields'] as &$field) {
+        if ($field['type'] != 'select' || strpos($field['cssClass'], 'populate-dates') === false) {
             continue;
+        }
 
         // you can add additional parameters here to alter the posts that are retreieved
         // more info: http://codex.wordpress.org/Template_Tags/get_posts
-        $currentdate = date("Y-m-d",mktime(0,0,0,date("m"),date("d"),date("Y")));
+        $currentdate = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d"), date("Y")));
 
         $events = get_posts(array(
-				    'post_type' => 'seminars',
-				    'orderby' => 'date',
-				    'order' => 'ASC',
-				    'meta_query'=> array(
-				        array(
-				          'key' => 'date',
-				          'compare' => '>=',
-				          'value' => $currentdate,
-				          'type' => 'DATE',
-				        )),
-				    'meta_key' => 'date',
-				    ));
+                    'post_type' => 'seminars',
+                    'orderby' => 'date',
+                    'order' => 'ASC',
+                    'meta_query'=> array(
+                        array(
+                          'key' => 'date',
+                          'compare' => '>=',
+                          'value' => $currentdate,
+                          'type' => 'DATE',
+                        )),
+                    'meta_key' => 'date',
+                    ));
 
         // update 'Select a Post' to whatever you'd like the instructive option to be
         $choices = array(array('text' => 'Select a Date', 'value' => ' '));
 
-        foreach($events as $post){
+        foreach ($events as $post) {
+            $postdate = $post->date;
+            // $postdate = 19881123 (23/11/1988)
 
-			$postdate = $post->date;
-			// $postdate = 19881123 (23/11/1988)
+            // extract Y,M,D
+            $y = substr($postdate, 0, 4);
+            $m = substr($postdate, 4, 2);
+            $d = substr($postdate, 6, 2);
 
-			// extract Y,M,D
-			$y = substr($postdate, 0, 4);
-			$m = substr($postdate, 4, 2);
-			$d = substr($postdate, 6, 2);
+            // create UNIX
+            $time = strtotime("{$d}-{$m}-{$y}");
 
-			// create UNIX
-			$time = strtotime("{$d}-{$m}-{$y}");
+            // format date (November 11th 1988)
+            $dropdowndate = date('M d', $time);
 
-			// format date (November 11th 1988)
-			$dropdowndate = date('M d', $time);
-
-			// not sure if you want to change just the displayed date, or the submitted date as well
-			// if you want to change both, change the second $post->date to $dropdowndate
-		    $choices[] = array('text' => $dropdowndate, 'value' => $post->$dropdowndate);
-		}
+            // not sure if you want to change just the displayed date, or the submitted date as well
+            // if you want to change both, change the second $post->date to $dropdowndate
+            $choices[] = array('text' => $dropdowndate, 'value' => $post->$dropdowndate);
+        }
 
 
         $field['choices'] = $choices;
-
     }
 
     return $form;
@@ -573,14 +563,12 @@ function remove_acf_menu()
     $current_user = wp_get_current_user();
 
     // match and remove if needed
-    if( !in_array( $current_user->user_login, $admins ) )
-    {
+    if (!in_array($current_user->user_login, $admins)) {
         remove_menu_page('edit.php?post_type=acf');
     }
-
 }
 
-add_action( 'admin_menu', 'remove_acf_menu' );
+add_action('admin_menu', 'remove_acf_menu');
 
 /*
 * ========================================================================
@@ -588,7 +576,7 @@ add_action( 'admin_menu', 'remove_acf_menu' );
 * ========================================================================
 */
 
-define( 'ACF_LITE' , false );
+define('ACF_LITE', false);
 include_once(ip_inc . 'acf/acf-repeater/acf-repeater.php');
 include_once(ip_inc . 'acf/acf-options-page/acf-options-page.php');
 include_once(ip_inc . 'acf/Gravity-Forms-ACF-Field-master/acf-gravity_forms.php');
@@ -600,15 +588,15 @@ include_once(ip_inc . 'acf/Gravity-Forms-ACF-Field-master/acf-gravity_forms.php'
 * ========================================================================
 */
 
-add_action("gform_get_form_filter","gform_event_tracking_labels",10,2);
+add_action("gform_get_form_filter", "gform_event_tracking_labels", 10, 2);
 
-function gform_event_tracking_labels($form_string,$form) {
+function gform_event_tracking_labels($form_string, $form)
+{
     $script = '<script>';
     $script .= 'if (window.gf_event_form_labels === undefined){ window.gf_event_form_labels = new Object(); }';
     $script .= 'window.gf_event_form_labels['.$form['id'].'] = "Form: '.strip_tags($form['title']).' ID: '.$form['id'].'";';
     $script .= '</script>';
     return $form_string.$script;
-
 }
 
 ?>

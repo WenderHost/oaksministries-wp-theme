@@ -1,0 +1,580 @@
+/*
+	Theme Name: Impact - HTML 5 Blank - Bootstrap
+	Theme URI: http://html5blank.com
+	Description: HTML5 Based Wordpress Theme with CSS3
+	Version: 1.0 - using V1.4.3 of HTML5 Blank & Bootstrap V3.1.1
+	Author: Impact
+	Author URI: http://impactpartner.com
+	Tags: Blank, HTML5, CSS3
+	
+*/
+
+/*------------------------------------*\
+	General
+\*------------------------------------*/
+
+code {
+	white-space: normal;
+}
+
+a {
+	cursor: pointer;
+}
+
+a:hover, a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+/** Offset Column Padding **/
+
+.no-padding {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.no-padding.left {
+	padding-right: 15px;
+}
+
+.no-padding.right {
+	padding-left: 15px;
+}
+
+
+/*------------------------------------*\
+	Navigation (Responsive)
+\*------------------------------------*/
+
+#nav-wrap {
+	display: table;
+    margin: 0px auto;
+}
+
+/* menu icon */
+#menu-icon {
+	display: none; /* hide menu icon initially */
+}
+
+#nav {
+	display: table-row;
+    list-style-position: outside;
+    list-style-type: none;
+    margin: 1px 0 0;
+    padding: 0;
+    position: relative;
+}
+
+#nav li {
+	color: #000;
+    border: 0 none;
+    float: left;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    display: table-cell;
+    padding: 20px 13px;
+}
+
+#nav li:last-child {
+	background: none;	
+}
+
+/* nav link */
+#nav a {
+	color: #000;
+	font-size: 16px;
+	padding: 13px 20px;
+}
+
+/* nav dropdown */
+#nav ul {
+	background: #fff;
+	padding: 2px;
+	position: absolute;
+	border: solid 1px #ccc;
+	display: none; /* hide dropdown */
+	width: 200px;
+}
+#nav ul li {
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+#nav li:hover > ul {
+	display: block; /* show dropdown on hover */
+}
+
+/*------------------------------------*\
+MOBILE
+\*------------------------------------*/
+@media screen and (max-width: 767px) {
+
+/* nav-wrap */
+#nav-wrap {
+	position: relative;
+	width: 100%;
+	padding: 10px 0;
+}
+
+/* menu icon */
+#menu-icon {
+	color: #000;
+	width: 100%;
+	height: 30px;
+	background: #ecebeb url("img/menu-icon.png") no-repeat 10px center;
+	padding: 4px 0 0 39px;
+	cursor: pointer;
+	border: solid 1px #666;
+	display: block; /* show menu icon */
+}
+#menu-icon:hover {
+	background-color: #f8f8f8;
+}
+#menu-icon.active {
+	background-color: #bbb;
+}
+
+/* main nav */
+#nav {
+	clear: both;
+	position: absolute;
+	top: 39px;
+	width: 100%;
+	z-index: 10000;
+	padding: 5px 0;
+	background: #f8f8f8;
+	border: solid 1px #999;
+	display: none; /* visibility will be toggled with jquery */
+}
+#nav li {
+	text-align: center;
+	background: none;
+	padding: 15px 0;
+	clear: both;
+	float: none;
+	display: block;
+	border-bottom: 1px solid #E8E8E8;
+}
+#nav li:last-child {
+	border: none;
+}
+
+#nav a, 
+#nav ul a {
+	font: inherit;
+	background: none;
+	display: inline;
+	padding: 0;
+	color: #666;
+	border: none;
+}
+#nav a:hover, 
+#nav ul a:hover {
+	background: none;
+	color: #000;
+}
+
+/* dropdown */
+#nav ul {
+	width: auto;
+	position: static;
+	display: block;
+	border: none;
+	background: inherit;
+}
+#nav ul li {
+	margin: 3px 0 3px 15px;
+}
+}
+
+@media screen and (min-width: 767px) {
+
+/* ensure #nav is visible on desktop version */
+#nav {
+	display: block !important;
+}
+}
+
+@media screen and (max-width: 930px) {
+#nav a {
+	font-size: 14px;
+	padding: 13px 12px;
+}
+}
+
+/*------------------------------------*\
+	BXSlider Default
+	
+	<ul class="bxslider">
+	  <li><p>Slide 1</p></li>
+	  <li><p>Slide 2</p></li>
+	  <li><p>Slide 3</p></li>
+	  <li><p>Slide 4</p></li>
+	</ul>  
+	
+	<!-- bx-pager -->
+	<div id="bx-pager">
+	    <a href="" class="pager" data-slide-index="0">Slide 1</a>
+	    <a href="" class="pager" data-slide-index="1">Slide 2</a>
+	    <a href="" class="pager" data-slide-index="2">Slide 3</a>
+	    <a href="" class="pager" data-slide-index="3">Slide 4</a>
+	</div>
+\*------------------------------------*/
+
+/* LOADER */
+
+.bx-wrapper .bx-loading {
+	min-height: 50px;
+	background: url("img/bx_loader.gif") center center no-repeat #fff;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+}
+
+#bx-pager {
+    padding-top: 40px;
+    text-align: center;
+}
+
+#bx-pager .pager {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 2px solid #FFFFFF;
+    display: inline-block;
+    border-radius: 10px;
+    height: 20px;
+    margin: 0 15px;
+    text-indent: -9999px;
+    width: 20px;
+-webkit-transition: all .4s ease;
+-moz-transition: all .4s ease;
+-ms-transition: all .4s ease;
+-o-transition: all .4s ease;
+transition: all .4s ease;
+}
+
+#bx-pager .pager:hover, #bx-pager .active {
+    background:#000;
+    border: medium none;
+}
+
+.bxslider li {
+	visibility: hidden;
+}
+
+/*------------------------------------*\
+	Scroll to Top
+\*------------------------------------*/
+
+
+.scrollup{
+	background-color: rgba(255, 255, 255, 0.4);
+    border: 1px solid #ECECEC;
+    border-radius: 10px 10px 10px 10px;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+	color: #333;
+    bottom: 9px;
+    width:50px;
+    position:fixed;
+    right:9px;
+	text-align: center;
+    text-decoration: none;
+	display: none;
+	cursor: pointer;
+	padding: 20px 10px 15px;
+   transition: background-color 0.3s linear 0s;
+}
+
+.scrollup:hover {
+background-color: #fff;	
+}
+
+/*------------------------------------*\
+	404 Page
+\*------------------------------------*/
+
+.big-error {
+    font-size: 100px;
+    line-height: 120px;
+    margin: 50px 0;
+    text-align: center;
+}
+.error-home {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 50px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*------------------------------------*\
+	Gravity Forms & Bootstrap v3
+\*------------------------------------*/
+
+.gform_wrapper .top_label li.gfield.gf_left_half {
+    margin: 0 0 8px;
+    width: 49%;
+}
+.gform_wrapper .top_label li.gfield.gf_right_half {
+    margin: 0 0 8px;
+    width: 49%;
+}
+
+.gform_wrapper .top_label li.gfield.gf_left_half {
+    clear: left !important;
+    float: left;
+}
+.gform_wrapper .top_label li.gfield.gf_right_half {
+    clear: right !important;
+    float: right;
+}
+
+@media (max-width: 767px) {
+	.gform_wrapper .top_label li.gfield.gf_left_half, .gform_wrapper .top_label li.gfield.gf_right_half {
+    width: 100%;
+	}
+}
+
+.gform_wrapper ul {
+padding-left: 0;
+list-style: none; }
+ 
+.gform_wrapper li {
+margin-bottom: 15px; }
+ 
+.gform_wrapper form {
+margin-bottom: 0; }
+ 
+.gform_wrapper .gfield_required {
+padding-left: 1px;
+color: #b94a48; }
+ 
+.ginput_container input, .ginput_container select, .ginput_container textarea {
+display: block;
+width: 100%;
+height: 34px;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.428571429;
+color: #555;
+vertical-align: middle;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
+ 
+.ginput_container input:-moz-placeholder, .ginput_container select:-moz-placeholder, .ginput_container textarea:-moz-placeholder {
+color: #999; }
+ 
+.ginput_container input::-moz-placeholder, .ginput_container select::-moz-placeholder, .ginput_container textarea::-moz-placeholder {
+color: #999; }
+ 
+.ginput_container input:-ms-input-placeholder, .ginput_container select:-ms-input-placeholder, .ginput_container textarea:-ms-input-placeholder {
+color: #999; }
+ 
+.ginput_container input::-webkit-input-placeholder, .ginput_container select::-webkit-input-placeholder, .ginput_container textarea::-webkit-input-placeholder {
+color: #999; }
+ 
+.ginput_container input:focus, .ginput_container select:focus, .ginput_container textarea:focus {
+border-color: #66afe9;
+outline: 0;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, 0.6); }
+ 
+.ginput_container input[disabled], .ginput_container select[disabled], .ginput_container textarea[disabled], .ginput_container input[readonly], .ginput_container select[readonly], .ginput_container textarea[readonly], fieldset[disabled] .ginput_container input, fieldset[disabled] .ginput_container select, fieldset[disabled] .ginput_container textarea {
+cursor: not-allowed;
+background-color: #eee; }
+ 
+textarea.ginput_container input, textarea.ginput_container select, textarea.ginput_container textarea {
+height: auto; }
+ 
+.ginput_container textarea {
+height: auto; }
+ 
+.gform_button {
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: 0;
+font-size: 14px;
+font-weight: normal;
+line-height: 1.428571429;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+border: 1px solid transparent;
+border-radius: 4px;
+white-space: nowrap;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+-o-user-select: none;
+user-select: none;
+color: #fff;
+background-color: #428bca;
+border-color: #357ebd; }
+ 
+.gform_button:focus {
+outline: thin dotted #333;
+outline: 5px auto -webkit-focus-ring-color;
+outline-offset: -2px; }
+ 
+.gform_button:hover, .gform_button:focus {
+color: #333;
+text-decoration: none; }
+ 
+.gform_button:active, .gform_button.active {
+outline: 0;
+background-image: none;
+-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+ 
+.gform_button.disabled, .gform_button[disabled], fieldset[disabled] .gform_button {
+cursor: not-allowed;
+pointer-events: none;
+opacity: .65;
+filter: alpha(opacity=65);
+-webkit-box-shadow: none;
+box-shadow: none; }
+ 
+.gform_button:hover, .gform_button:focus, .gform_button:active, .gform_button.active, .open .dropdown-toggle.gform_button {
+color: #fff;
+background-color: #3276b1;
+border-color: #285e8e; }
+ 
+.gform_button:active, .gform_button.active, .open .dropdown-toggle.gform_button {
+background-image: none; }
+ 
+.gform_button.disabled, .gform_button[disabled], fieldset[disabled] .gform_button, .gform_button.disabled:hover, .gform_button[disabled]:hover, fieldset[disabled] .gform_button:hover, .gform_button.disabled:focus, .gform_button[disabled]:focus, fieldset[disabled] .gform_button:focus, .gform_button.disabled:active, .gform_button[disabled]:active, fieldset[disabled] .gform_button:active, .gform_button.disabled.active, .gform_button[disabled].active, fieldset[disabled] .gform_button.active {
+background-color: #428bca;
+border-color: #357ebd; }
+ 
+.gform_wrapper .gfield_error .gfield_label {
+color: #b94a48; }
+ 
+.gform_wrapper .gfield_error input, .gform_wrapper .gfield_error select, .gform_wrapper .gfield_error textarea {
+border-color: #eed3d7;
+background-color: #f2dede;
+color: #b94a48; }
+ 
+.gform_wrapper .gfield_error input:focus, .gform_wrapper .gfield_error select:focus, .gform_wrapper .gfield_error textarea:focus {
+border-color: #b94a48;
+outline: 0;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(185, 74, 72, 0.6);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(185, 74, 72, 0.6); }
+ 
+.validation_error {
+padding: 15px;
+margin-bottom: 20px;
+border: 1px solid transparent;
+border-radius: 4px;
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48; }
+ 
+.validation_error h4 {
+margin-top: 0;
+color: inherit; }
+ 
+.validation_error .alert-link {
+font-weight: bold; }
+ 
+.validation_error>p, .validation_error>ul {
+margin-bottom: 0; }
+ 
+.validation_error>p+p {
+margin-top: 5px; }
+ 
+.validation_error hr {
+border-top-color: #e6c1c7; }
+ 
+.validation_error .alert-link {
+color: #953b39; }
+ 
+#gforms_confirmation_message {
+padding: 15px;
+margin-bottom: 20px;
+border: 1px solid transparent;
+border-radius: 4px; }
+ 
+#gforms_confirmation_message h4 {
+margin-top: 0;
+color: inherit; }
+ 
+#gforms_confirmation_message .alert-link {
+font-weight: bold; }
+ 
+#gforms_confirmation_message>p, #gforms_confirmation_message>ul {
+margin-bottom: 0; }
+ 
+#gforms_confirmation_message>p+p {
+margin-top: 5px; }
+ 
+.gallery-row {
+padding: 15px 0; }
+ 
+.aligncenter {
+display: block;
+margin: 0 auto; }
+ 
+.alignleft {
+float: left; }
+ 
+.alignright {
+float: right; }
+ 
+figure.alignnone {
+margin-left: 0;
+margin-right: 0; }
+
+/*------------------------------------*\
+	Shortcode: Toggle Boxes [toggle title="Your Title "]Insert your text here[/toggle]
+\*------------------------------------*/
+
+h3.toggle {
+background-image: url(" ");
+font-size: 16px;
+padding: 0 0 10px 23px;
+margin: 0;
+cursor: pointe
+}
+h3.toggle a {
+text-decoration: none;
+display: block;
+}
+h3.toggle-active {
+
+}
+.toggle-box {
+clear:both;
+margin: 0 0 10px 0;
+overflow: hidden;
+}
+
+/*------------------------------------*\
+	Shortcode: Clear Tag [clear]
+\*------------------------------------*/
+
+.sc-divider {
+content: "";
+border-top: 1px solid #d8d8d8;
+clear: both;
+width: 100%;
+height: 1px;
+padding: 0;
+margin: 20px 0;
+position: relative;
+}
+
+/*------------------------------------*\
+    Shortcode: Justify [Justify]
+\*------------------------------------*/
+
+.justify {
+	text-align: justify;
+}
