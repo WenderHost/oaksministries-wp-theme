@@ -54,7 +54,11 @@
                 <!-- /Article -->
 
                 <?php                                                                                                                                                                                                                                                                                                                                                                                                                                 endwhile; ?>
-
+                <!-- pagination -->
+                <div class="pagination">
+                    <?php html5wp_pagination(); ?>
+                </div>
+                <!-- /pagination -->
             <?php else : ?>
 
                 <!-- Article -->
