@@ -349,6 +349,19 @@ header {
 	overflow: auto;
 }
 
+.copyright{
+	padding: 10px 0;
+	clear: both;
+	background-color: #000;
+	color: #ccc;
+	margin: 5px 5px 0 5px;
+
+	.copyright-wrap{
+		text-align: center;
+		font-size: 16px;
+	}
+}
+
 .promo {
 	background: url('../img/promo.jpg') no-repeat scroll center top transparent;
 	background-size: cover;
@@ -376,6 +389,12 @@ header {
 .links {
 	color: #fff;
 	padding: 0 5px;
+
+	&:after{
+		content: "";
+		display: table;
+		clear: both;
+	}
 }
 
 .link {
