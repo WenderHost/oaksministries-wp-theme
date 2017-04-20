@@ -4,10 +4,10 @@
     <div class="container">
 
 		<!-- Column -->
-    	<div class="col-xs-12 col-md-12">
+    	<div class="col-xs-12 col-md-7">
 
 	<!-- Section -->
-	<section>
+	<section class="page-wrap">
 
 		<h1><?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
 
@@ -24,6 +24,14 @@
 
         </div>
     	<!-- /Column -->
+
+	    <!-- Column -->
+	    <div class="col-xs-12 col-md-4 col-md-push-1 sidebar-wrap">
+
+	        <?php get_sidebar(); ?>
+
+	    </div>
+	    <!-- /Column -->
 
 	</div>
 	<!-- /Container -->
