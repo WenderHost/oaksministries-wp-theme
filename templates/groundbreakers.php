@@ -46,7 +46,7 @@ get_header(); ?>
 <p>To the God Who asked me to exchange my dot for the string,</p>
 <p>I surrender my life today in order to be used for Your purposes instead of mine.</p>
 
-        	<?php echo do_shortcode('[ninja_forms_display_form id=1] '); ?>
+        	<?php echo do_shortcode('[gravityform id="2" title="false" description="false" ajax="true"]'); ?>
 
         </section>
         <!-- Section -->
