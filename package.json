@@ -1,7 +1,11 @@
 {
   "name": "oaksmin",
   "version": "1.0.0",
-  "description": "",
+  "description": "Description goes here.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/username/repository.git"
+  },
   "main": "functions.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

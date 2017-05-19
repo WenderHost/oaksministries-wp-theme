@@ -41,48 +41,24 @@
     <!-- links -->
     <section class="links">
 
-        <!-- Column -->
         <div class="col-xs-12 col-md-4 link">
-
             <a href="<?php echo get_home_url(); ?>/resources/" class="footer-links">
-
                 <div class="link-img link-img-1"></div>
-
-                <h3>Book Now Available!</h3>
+                <h3>Purchase <em>Live ABOVE the Chaos</em></h3>
             </a>
-
         </div>
-        <!-- /Column -->
-
-
-        <!-- Column -->
         <div class="col-xs-12 col-md-4 link">
-
-            <a href="<?php echo get_home_url(); ?>/groundbreakers/" class="footer-links">
-
+            <a href="<?php echo get_home_url(); ?>/blog/" class="footer-links">
                 <div class="link-img link-img-2"></div>
-
-                <h3>Become a Groundbreaker</h3>
-
-            </a>
-
-        </div>
-        <!-- /Column -->
-
-        <!-- Column -->
-        <div class="col-xs-12 col-md-4 link">
-
-        	<a href="<?php echo get_home_url(); ?>/blog/" class="footer-links">
-
-                <div class="link-img link-img-3"></div>
-
                 <h3>Read the Blog</h3>
-
             </a>
-
         </div>
-        <!-- /Column -->
-        </a>
+        <div class="col-xs-12 col-md-4 link">
+        	<a href="<?php echo get_home_url(); ?>/speaking-and-videos/" class="footer-links">
+                <div class="link-img link-img-3"></div>
+                <h3>Speaking</h3>
+            </a>
+        </div>
 
     </section>
     <!-- links -->
