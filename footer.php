@@ -37,7 +37,7 @@
 
     </section>
     <!-- promo -->
-
+<?php if ( ! is_front_page() ){ ?>
     <!-- links -->
     <section class="links">
 
@@ -62,7 +62,7 @@
 
     </section>
     <!-- links -->
-
+<?php } ?>
     <!-- copyright -->
     <section class="copyright">
 

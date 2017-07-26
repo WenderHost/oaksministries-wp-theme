@@ -1,6 +1,6 @@
 <!-- Sidebar -->
 <aside class="sidebar">
-
+    <?php if ( ! is_front_page() ){ ?>
     <div class="word-wrap" style="background: <?php $values = get_field('featured_color'); if($values) { ?><?php the_field( "featured_color" ); ?><?php } else { ?>#BCAC5E<?php } ?>;">
 
 <?php $values = get_field('verse_title'); if($values) { ?>
@@ -30,6 +30,7 @@
     <!-- verse-wrap -->
 
     <a href="https://twitter.com/oaksministries" target="_blank" class="twitter-link"><h3>Follow Laurie on Twitter</h3></a>
+    <?php } ?>
 
 	<div class="sidebar-widget">
 		<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('widget-area-1')) ?>

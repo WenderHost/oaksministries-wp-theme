@@ -2,7 +2,57 @@
 /*
 Template Name: Home Template
 */
-get_header(); ?>
+get_header();
+
+$verse = ( $verse = get_post_meta( $post->ID, 'verse', true ) )? $verse : 'So then, just as you received Christ Jesus as Lord, continue to live in Him, rooted and built up in him, strengthened in the faith as you were taught, and overflowing with thankfulness.';
+$verse_reference = ( $verse_reference = get_post_meta( $post->ID, 'verse_reference', true ) )? $verse_reference : 'Colossians 2:6-7';
+?>
+
+<!-- featured -->
+<div class="featured" style="background-image: url('<?php $values = get_field('background_image'); if($values) { ?><?php the_field( "background_image" ); ?><?php } else { ?><?php echo get_template_directory_uri(); ?>/img/featured.jpg<?php } ?>');">
+
+    <!-- Container -->
+    <div class="container">
+        <div class="col-md-5">
+
+            <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" class="logo"></a>
+
+        </div>
+        <div class="col-md-6 col-md-push-1 intro"><?php
+        echo apply_filters( 'the_content', $verse );
+        if( ! empty( $verse_reference ) )
+            echo '<p style="text-align: right;">' . $verse_reference . '</p>';
+        ?></div>
+    </div>
+    <!-- /Container -->
+
+</div>
+<!-- featured -->
+<!-- links -->
+<section class="links">
+
+    <div class="col-xs-12 col-md-4 link">
+        <a href="<?php echo get_home_url(); ?>/resources/" class="footer-links">
+            <div class="link-img link-img-1"></div>
+            <h3>Purchase <em>Live ABOVE the Chaos</em></h3>
+        </a>
+    </div>
+    <div class="col-xs-12 col-md-4 link">
+        <a href="<?php echo get_home_url(); ?>/blog/" class="footer-links">
+            <div class="link-img link-img-2"></div>
+            <h3>Read the Blog</h3>
+        </a>
+    </div>
+    <div class="col-xs-12 col-md-4 link">
+        <a href="<?php echo get_home_url(); ?>/speaking-and-videos/" class="footer-links">
+            <div class="link-img link-img-3"></div>
+            <h3>Speaking</h3>
+        </a>
+    </div>
+
+</section>
+<!-- links -->
+
 <style>
 
 .footer-links:hover {

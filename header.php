@@ -45,6 +45,7 @@
 </header>
 <!-- /Header -->
 
+<?php if( ! is_front_page() ){ ?>
 <!-- featured -->
 <div class="featured" style="background-image: url('<?php $values = get_field('background_image'); if($values) { ?><?php the_field( "background_image" ); ?><?php } else { ?><?php echo get_template_directory_uri(); ?>/img/featured.jpg<?php } ?>');">
 
@@ -64,3 +65,4 @@
 
 </div>
 <!-- featured -->
+<?php } ?>
